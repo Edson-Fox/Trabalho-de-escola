@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cartaz – Ervas Medicinais | Princípios Ativos e Efeitos</title>
+  <style>
+    :root {
+      --bg: #0b0e14;
+      --panel: #101520;
+      --ink: #e8ecf1;
+      --muted: #a7b3c2;
+      --accent: #3ddc97;
+      --accent-2: #7aa2f7;
+      --good: #82d173;
+      --warn: #ffcf5a;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 500 12pt/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    @page {
+      size: A4;
+      margin: 16mm;
+    }
+
+    .page {
+      break-after: always;
+      padding: 6mm;
+      background: transparent;
+    }
+
+    .page:last-child {
+      break-after: auto
+    }
+
+    h1 {
+      font-size: 28pt;
+      line-height: 1.2;
+      margin: 0 0 8px;
+      letter-spacing: 0.2px
+    }
+
+    h2 {
+      font-size: 18pt;
+      line-height: 1.25;
+      margin: 24px 0 8px
+    }
+
+    p {
+      margin: 0 0 8px
+    }
+
+    .grid {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: 1fr;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.02));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 14px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25)
+    }
+
+    .img-top {
+      width: 100%;
+      height: 500px;
+      border: 1px dashed rgba(255, 255, 255, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .img-top img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .meta {
+      display: grid;
+      gap: 6px
+    }
+
+    .kvs {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 6px 10px
+    }
+
+    .kv {
+      color: var(--muted)
+    }
+
+    .pill {
+      display: inline-block;
+      padding: .1rem .5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: var(--ink);
+      font-size: 10pt
+    }
+
+    .badge {
+      font-weight: 700;
+      color: var(--panel);
+      background: var(--accent);
+      border: none
+    }
+
+    .safety {
+      border-left: 4px solid var(--warn);
+      padding: 8px 10px;
+      background: rgba(255, 207, 90, 0.09);
+      color: #ffe7a3;
+      border-radius: 8px
+    }
+
+    .foot {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 9.5pt
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="page">
+    <h1>Ervas Medicinais</h1>
+    <p style="font-size:14pt; color:var(--muted); max-width:70ch">Princípios ativos, mecanismos de ação e efeitos no
+      corpo humano — um olhar químico sobre 10 ervas populares.</p>
+    <div style="margin:18px 0 8px">
+      <span class="pill badge">Feira de Ciências</span>
+      <span class="pill">Grupo: Edson, Cristina, Carla</span>
+      <span class="pill">Profª Rayanne</span>
+    </div>
+    <div class="safety">Atenção: dose importa. Interações com medicamentos são possíveis.</div>
+  </section>
+
+  <section class="page">
+    <div class="grid">
+      <!-- Camomila -->
+      <article class="card">
+        <h2>Camomila (Matricaria chamomilla)</h2>
+        <div class="img-top"><img src="assets/camomila.jpg" alt="Camomila"></div>
+        <div class="meta">
+          <div class="kvs">
+            <div class="kv">Princípio ativo</div>
+            <div>Apigenina (flavonoide)</div>
+            <div class="kv">Mecanismo</div>
+            <div>Ligação a receptores GABA<sub>A</sub> → efeito calmante</div>
+            <div class="kv">Efeito</div>
+            <div>Auxilia no sono e relaxamento</div>
+            <div class="kv">Cuidados</div>
+            <div>Possível alergia em pessoas sensíveis</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Hortelã -->
+      <article class="card">
+        <h2>Hortelã (Mentha spicata)</h2>
+        <div class="img-top"><img src="assets/hortela.jpg" alt="Hortelã"></div>
+        <div class="meta">
+          <div class="kvs">
+            <div class="kv">Princípio ativo</div>
+            <div>Mentol</div>
+            <div class="kv">Mecanismo</div>
+            <div>Ativa canais TRPM8 → sensação refrescante; relaxa musculatura gástrica</div>
+            <div class="kv">Efeito</div>
+            <div>Melhora digestão e cólicas leves</div>
+            <div class="kv">Cuidados</div>
+            <div>Evitar excesso em refluxo</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Alecrim -->
+      <article class="card">
+        <h2>Alecrim (Rosmarinus officinalis)</h2>
+        <div class="img-top"><img src="assets/alecrim.jpg" alt="Alecrim"></div>
+        <div class="meta">
+          <div class="kvs">
+            <div class="kv">Princípio ativo</div>
+            <div>Ácido rosmarínico (antioxidante)</div>
+            <div class="kv">Mecanismo</div>
+            <div>Atividade antioxidante e anti-inflamatória; modulação colinérgica</div>
+            <div class="kv">Efeito</div>
+            <div>Apoio à memória e circulação</div>
+            <div class="kv">Cuidados</div>
+            <div>Evitar doses altas em hipertensos não controlados</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Continue substituindo [ imagem ] por <img> em todas as demais ervas -->
+
+    </div>
+  </section>
+
+</body>
+
+</html>

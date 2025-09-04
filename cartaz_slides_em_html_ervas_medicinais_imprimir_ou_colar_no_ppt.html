@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cartaz – Ervas Medicinais | Princípios Ativos e Efeitos</title>
+  <style>
+    /* —— Tipografia e base —— */
+    :root{
+      --bg:#0b0e14;         /* fundo escuro elegante */
+      --panel:#101520;      /* painel/cartão */
+      --ink:#e8ecf1;        /* texto principal */
+      --muted:#a7b3c2;      /* texto secundário */
+      --accent:#3ddc97;     /* destaque suave */
+      --accent-2:#7aa2f7;   /* segundo destaque */
+      --good:#82d173;
+      --warn:#ffcf5a;
+    }
+    html,body{margin:0; padding:0; background:var(--bg); color:var(--ink); font:500 12pt/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;}
+    *{box-sizing:border-box}
+
+    /* —— Layout de página para impressão —— */
+    @page { size: A4; margin: 16mm; }
+    .page{break-after:always; padding:6mm; background:transparent;}
+    .page:last-child{break-after:auto}
+
+    /* —— Cabeçalhos —— */
+    h1{font-size:28pt; line-height:1.2; margin:0 0 8px; letter-spacing:0.2px}
+    h2{font-size:18pt; line-height:1.25; margin:24px 0 8px}
+    h3{font-size:13.5pt; line-height:1.25; margin:12px 0 6px; color:var(--accent)}
+    p{margin:0 0 8px}
+
+    /* —— Cartões —— */
+    .grid{display:grid; gap:12px; grid-template-columns:repeat(2, 1fr);} /* 2 por página para boa leitura impressa */
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.02)); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:14px; box-shadow:0 6px 18px rgba(0,0,0,0.25)}
+    .row{display:grid; grid-template-columns:110px 1fr; gap:12px; align-items:center}
+    .ph{width:110px; height:110px; border-radius:12px; border:1px dashed rgba(255,255,255,0.25); display:grid; place-items:center; color:var(--muted); font-size:10pt}
+    .meta{display:grid; gap:6px}
+    .kvs{display:grid; grid-template-columns:120px 1fr; gap:6px 10px}
+    .kv{color:var(--muted)}
+    .pill{display:inline-block; padding:.1rem .5rem; border-radius:999px; border:1px solid rgba(255,255,255,0.14); color:var(--ink); font-size:10pt}
+    .badge{font-weight:700; color:var(--panel); background:var(--accent); border:none}
+
+    /* —— Box de segurança —— */
+    .safety{border-left:4px solid var(--warn); padding:8px 10px; background:rgba(255,207,90,0.09); color:#ffe7a3; border-radius:8px}
+
+    /* —— Rodapé —— */
+    .foot{margin-top:8px; color:var(--muted); font-size:9.5pt}
+
+    /* —— Quebra manual —— */
+    .break{break-before:page}
+
+    /* —— Para telas pequenas (preview no celular) —— */
+    @media screen and (max-width:900px){
+      .grid{grid-template-columns:1fr}
+      .row{grid-template-columns:90px 1fr}
+      .ph{width:90px; height:90px}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- —— CAPA —— -->
+  <section class="page">
+    <h1>Ervas Medicinais</h1>
+    <p style="font-size:14pt; color:var(--muted); max-width:70ch">Princípios ativos, mecanismos de ação e efeitos no corpo humano — um olhar químico sobre 10 ervas populares.</p>
+    <div style="margin:18px 0 8px">
+      <span class="pill badge">Feira de Ciências</span>
+      <span class="pill">Grupo: Edson, Cristina, Carla</span>
+      <span class="pill">Profª Rayanne</span>
+    </div>
+
+    <h2>Como ler o cartaz</h2>
+    <p>Para cada erva você verá: <strong>princípio ativo</strong> → <strong>mecanismo</strong> → <strong>efeito</strong> → <strong>cuidados</strong>. Substitua os espaços <em>[imagem]</em> por fotos reais antes de imprimir.</p>
+
+    <div class="safety" style="margin-top:16px">
+      <strong>Atenção:</strong> dose importa. Ervas podem interagir com medicamentos. Este material é educativo e não substitui orientação profissional.
+    </div>
+
+    <p class="foot">Dica: Imprima em A4. Se quiser usar como slides no PowerPoint, exporte cada página como PDF ou imagens.</p>
+  </section>
+
+  <!-- —— PÁGINA 2: Camomila / Hortelã —— -->
+  <section class="page">
+    <div class="grid">
+      <!-- Camomila -->
+      <article class="card">
+        <h2>Camomila <small style="color:var(--muted); font-weight:500">(Matricaria chamomilla)</small></h2>
+        <div class="row">
+          <figure class="ph" aria-label="Espaço para imagem da camomila">[ imagem ]</figure>
+          <div class="meta">
+            <div class="kvs">
+              <div class="kv">Princípio ativo</div><div><strong>Apigenina</strong> (flavonoide)</div>
+              <div class="kv">Mecanismo</div><div>Ligação a receptores GABA<sub>A</sub> no SNC → efeito ansiolítico</div>
+              <div class="kv">Efeito</div><div>Calmante, auxilia sono</div>
+              <div class="kv">Cuidados</div><div>Possível alergia em sensíveis a Asteraceae</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Hortelã -->
+      <article class="card">
+        <h2>Hortelã <small style="color:var(--muted); font-weight:500">(Mentha spicata)</small></h2>
+        <div class="row">
+          <figure class="ph" aria-label="Espaço para imagem da hortelã">[ imagem ]</figure>
+          <div class="meta">
+            <div class="kvs">
+              <div class="kv">Princípio ativo</div><div><strong>Mentol</strong> (óleo essencial)</div>
+              <div class="kv">Mecanismo</div><div>Ativa canais TRPM8 → sensação refrescante; relaxa musculatura lisa gástrica</div>
+              <div class="kv">Efeito</div><div>Melhora digestão, alívio de cólicas leves</div>
+              <div class="kv">Cuidados</div><div>Evitar em refluxo importante; mentol pode irritar em excesso</div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- —— PÁGINA 3: Alecrim / Erva‑doce —— -->
+  <section class="page">
+    <div class="grid">
+      <!-- Alecrim -->
+      <article class="card">
+        <h2>Alecrim <small style="color:var(--muted); font-weight:500">(Rosmarinus officinalis)</small></h2>
+        <div class="row">
+          <figure class="ph">[ imagem ]</figure>
+          <div class="meta">
+            <div class="kvs">
+              <div class="kv">Princípio ativo</div><div><strong>Ácido rosmarínico</strong> (antioxidante)</div>
+              <div class="kv">Mecanismo</div><div>Atividade antioxidante e anti-inflamatória; modulação colinérgica</div>
+              <div class="kv">Efeito</div><div>Apoio à memória e circulação</div>
+              <div class="kv">Cuidados</div><div>Evitar doses altas em hipertensos não controlados</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Erva‑doce -->
+      <article class="card">
+        <h2>Erva‑doce <small style="color:var(--muted); font-weight:500">(Foeniculum vulgare)</small></h2>
+        <div class="row">
+          <figure class="ph">[ imagem ]</figure>
+          <div class="meta">
+            <div class="kvs">
+              <div class="kv">Princípio ativo</div><div><strong>Anetol</strong></div>
+              <div class="kv">Mecanismo</div><div>Ação carminativa; reduz espasmo intestinal</div>
+              <div class="kv">Efeito</div><div>Alívio de gases e cólicas</div>
+              <div class="kv">Cuidados</div><div>Uso moderado em gestantes; possível alergia</div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- —— PÁGINA 4: Boldo / Gengibre —— -->
+  <section class="page">
+    <div class="grid">
+      <!-- Boldo -->
+      <article class="card">
+        <h2>Boldo <small style="color:var(--muted); font-weight:500">(Peumus boldus)</small></h2>
+        <div class="row">
+          <figure class="ph">[ imagem ]</figure>
+          <div class="meta">
+            <div class="kvs">
+              <div class="kv">Princípio ativo</div><div><strong>Boldina</strong> (alcaloide)</div>
+              <div class="kv">Mecanismo</div><div>Estimula fluxo biliar (colerético)</div>
+              <div class="kv">Efeito</div><div>Auxilia digestão de gorduras</div>
+              <div class="kv">Cuidados</div><div>Contraindicado em obstrução biliar; evitar excesso</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Gengibre -->
+      <article class="card">
+        <h2>Gengibre <small style="color:var(--muted); font-weight:500">(Zingiber officinale)</small></h2>
+        <div class="row">
+          <figure class="ph">[ imagem ]</figure>
+          <div class="meta">
+            <div class="kvs">
+              <div class="kv">Princípio ativo</div><div><strong>Gingerol</strong></div>
+              <div class="kv">Mecanismo</div><div>Modulação de mediadores inflamatórios; ação antiemética</div>
+              <div class="kv">Efeito</div><div>Anti-inflamatório leve; reduz náuseas</div>
+              <div class="kv">Cuidados</div><div>Usar com cautela em anticoagulados</div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- —— PÁGINA 5: Capim‑limão / Alho —— -->
+  <section class="page">
+    <div class="grid">
+      <!-- Capim‑limão -->
+      <article class="card">
+        <h2>Capim‑limão <small style="color:var(--muted); font-weight:500">(Cymbopogon citratus)</small></h2>
+        <div class="row">
+          <figure class="ph">[ imagem ]</figure>
+          <div class="meta">
+            <div class="kvs">
+              <div class="kv">Princípio ativo</div><div><strong>Citral</strong></div>
+              <div class="kv">Mecanismo</div><div>Efeito relaxante muscular; possível modulação GABAérgica</div>
+              <div class="kv">Efeito</div><div>Calmante, auxilia no estresse</div>
+              <div class="kv">Cuidados</div><div>Evitar concentrações altas de óleo essencial na pele</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Alho -->
+      <article class="card">
+        <h2>Alho <small style="color:var(--muted); font-weight:500">(Allium sativum)</small></h2>
+        <div class="row">
+          <figure class="ph">[ imagem ]</figure>
+          <div class="meta">
+            <div class="kvs">
+              <div class="kv">Princípio ativo</div><div><strong>Alicina</strong> (derivada da alliinase)</div>
+              <div class="kv">Mecanismo</div><div>Ação antimicrobiana; possíveis efeitos sobre lípides</div>
+              <div class="kv">Efeito</div><div>Apoio cardiovascular e imunológico</div>
+              <div class="kv">Cuidados</div><div>Pode potencializar anticoagulantes; odor característico</div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- —— PÁGINA 6: Eucalipto / Guaraná —— -->
+  <section class="page">
+    <div class="grid">
+      <!-- Eucalipto -->
+      <article class="card">
+        <h2>Eucalipto <small style="color:var(--muted); font-weight:500">(Eucalyptus globulus)</small></h2>
+        <div class="row">
+          <figure class="ph">[ imagem ]</figure>
+          <div class="meta">
+            <div class="kvs">
+              <div class="kv">Princípio ativo</div><div><strong>Eucaliptol</strong> (1,8-cineol)</div>
+              <div class="kv">Mecanismo</div><div>Ação expectorante e descongestionante</div>
+              <div class="kv">Efeito</div><div>Alívio respiratório</div>
+              <div class="kv">Cuidados</div><div>Óleo essencial concentrado não deve ser ingerido</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Guaraná -->
+      <article class="card">
+        <h2>Guaraná <small style="color:var(--muted); font-weight:500">(Paullinia cupana)</small></h2>
+        <div class="row">
+          <figure class="ph">[ imagem ]</figure>
+          <div class="meta">
+            <div class="kvs">
+              <div class="kv">Princípio ativo</div><div><strong>Cafeína</strong></div>
+              <div class="kv">Mecanismo</div><div>Antagonismo de receptores de adenosina no SNC</div>
+              <div class="kv">Efeito</div><div>Estimula vigília, foco e energia</div>
+              <div class="kv">Cuidados</div><div>Evitar à noite; pode elevar ansiedade/taquicardia</div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- —— PÁGINA 7: Painel de conclusão —— -->
+  <section class="page">
+    <h2>Conclusões</h2>
+    <ul>
+      <li>A ação das ervas é explicada pelos <strong>princípios ativos</strong>, que interagem com receptores e vias bioquímicas.</li>
+      <li><strong>Dose certa = benefício</strong>; excesso pode causar efeitos adversos.</li>
+      <li>Verifique <strong>interações</strong> com medicamentos (ex.: anticoagulantes).</li>
+      <li>Ciência e tradição podem caminhar juntas quando explicamos mecanismos e limites.</li>
+    </ul>
+
+    <h3 style="margin-top:16px">Créditos & Funções</h3>
+    <p><strong>Edson</strong> — pesquisa e explicações | <strong>Cristina</strong> — coleta das ervas | <strong>Carla</strong> — visual e personalização | <strong>Profª Rayanne</strong> — mediação</p>
+
+    <p class="foot">Como usar: cole fotos reais sobre os espaços <em>[ imagem ]</em>; para levar ao PowerPoint, use "Imprimir" → "Salvar como PDF" por página, ou copie e cole os cartões como imagens.</p>
+  </section>
+
+</body>
+</html>
