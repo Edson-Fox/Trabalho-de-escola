@@ -21,6 +21,7 @@
     body {
       margin: 0;
       padding: 0;
+      height: 100%;
       background: var(--bg);
       color: var(--ink);
       font: 500 12pt/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
@@ -38,7 +39,6 @@
     .page {
       break-after: always;
       padding: 6mm;
-      background: transparent;
       page-break-inside: avoid;
     }
 
@@ -137,20 +137,26 @@
       font-size: 9.5pt;
     }
 
-    /* Fundo suave apenas na primeira página */
-    .page:first-of-type {
-      position: relative;
-      background: transparent;
+    /* Primeira página: texto + imagem preenchendo o resto */
+    .first-page {
+      display: flex;
+      flex-direction: column;
+      min-height: 297mm;
+      padding: 6mm;
+      page-break-after: always;
     }
 
-    .page:first-of-type::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: url("assets/fundo-ervas.png") center/cover no-repeat;
+    .image-space {
+      flex-grow: 1;
+      margin-top: 16px;
+      overflow: hidden;
+    }
+
+    .image-space img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       opacity: 0.15;
-      z-index: -1;
-      border-radius: 12px;
     }
   </style>
 </head>
@@ -158,7 +164,7 @@
 <body>
 
   <!-- Primeira página -->
-  <section class="page">
+  <section class="page first-page">
     <h1>Ervas Medicinais</h1>
     <p style="font-size:14pt; color:var(--muted); max-width:70ch">
       Princípios ativos, mecanismos de ação e efeitos no corpo humano — um olhar químico sobre 10 ervas populares.
@@ -169,11 +175,14 @@
       <span class="pill">Profª Rayanne</span>
     </div>
     <div class="safety">Atenção: dose importa. Interações com medicamentos são possíveis.</div>
+
+    <div class="image-space">
+      <img src="assets/fundo-ervas.png" alt="Ervas ilustrativas">
+    </div>
   </section>
 
-  <!-- Cada erva em uma página -->
+  <!-- Lista de ervas -->
   <section class="page">
-    <!-- Camomila -->
     <article class="card">
       <h2>Camomila (Matricaria chamomilla)</h2>
       <div class="img-top"><img src="assets/camomila.jpg" alt="Camomila"></div>
@@ -193,7 +202,6 @@
   </section>
 
   <section class="page">
-    <!-- Hortelã -->
     <article class="card">
       <h2>Hortelã (Mentha spicata)</h2>
       <div class="img-top"><img src="assets/hortela.jpg" alt="Hortelã"></div>
@@ -213,7 +221,6 @@
   </section>
 
   <section class="page">
-    <!-- Alecrim -->
     <article class="card">
       <h2>Alecrim (Rosmarinus officinalis)</h2>
       <div class="img-top"><img src="assets/alecrim.jpg" alt="Alecrim"></div>
@@ -233,7 +240,6 @@
   </section>
 
   <section class="page">
-    <!-- Erva-doce -->
     <article class="card">
       <h2>Erva-doce (Foeniculum vulgare)</h2>
       <div class="img-top"><img src="assets/ervadoce.jpg" alt="Erva-doce"></div>
@@ -253,7 +259,6 @@
   </section>
 
   <section class="page">
-    <!-- Boldo -->
     <article class="card">
       <h2>Boldo (Peumus boldus)</h2>
       <div class="img-top"><img src="assets/boldo.jpg" alt="Boldo"></div>
@@ -273,7 +278,6 @@
   </section>
 
   <section class="page">
-    <!-- Gengibre -->
     <article class="card">
       <h2>Gengibre (Zingiber officinale)</h2>
       <div class="img-top"><img src="assets/gengibre.jpg" alt="Gengibre"></div>
@@ -293,7 +297,6 @@
   </section>
 
   <section class="page">
-    <!-- Capim-limão -->
     <article class="card">
       <h2>Capim-limão (Cymbopogon citratus)</h2>
       <div class="img-top"><img src="assets/capimlimao.webp" alt="Capim-limão"></div>
@@ -313,7 +316,6 @@
   </section>
 
   <section class="page">
-    <!-- Alho -->
     <article class="card">
       <h2>Alho (Allium sativum)</h2>
       <div class="img-top"><img src="assets/alho.jpg" alt="Alho"></div>
@@ -333,7 +335,6 @@
   </section>
 
   <section class="page">
-    <!-- Eucalipto -->
     <article class="card">
       <h2>Eucalipto (Eucalyptus globulus)</h2>
       <div class="img-top"><img src="assets/eucalipto.png" alt="Eucalipto"></div>
@@ -353,7 +354,6 @@
   </section>
 
   <section class="page">
-    <!-- Lavanda -->
     <article class="card">
       <h2>Lavanda (Lavandula angustifolia)</h2>
       <div class="img-top"><img src="assets/lavanda.jpg" alt="Lavanda"></div>
@@ -378,4 +378,5 @@
   </footer>
 
 </body>
+
 </html>
